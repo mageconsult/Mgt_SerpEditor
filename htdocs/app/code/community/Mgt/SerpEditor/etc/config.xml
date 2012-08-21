@@ -10,6 +10,9 @@
             <mgt_serp_editor>
                 <class>Mgt_SerpEditor_Block</class>
             </mgt_serp_editor>
+            <mgt_serp_editor_adminhtml>
+                <class>Mgt_SerpEditor_Block_Adminhtml</class>
+            </mgt_serp_editor_adminhtml>
         </blocks>
         <models>
             <mgt_serp_editor>
@@ -23,6 +26,16 @@
         </helpers>
     </global>
     <adminhtml>
+        <events>
+            <adminhtml_catalog_product_edit_prepare_form>
+                <observers>
+                    <mgt_serp_editor_set_field_renderer>
+                        <class>mgt_serp_editor/observer</class>
+                        <method>setFieldRenderer</method>
+                    </mgt_serp_editor_set_field_renderer>
+                 </observers>
+            </adminhtml_catalog_product_edit_prepare_form>
+        </events>
         <acl>
             <resources>
                 <all>
@@ -45,5 +58,23 @@
                 </admin>
             </resources>
         </acl>
+        <layout>
+            <updates>
+                <mgt_serp_editor>
+                    <file>mgt_serp_editor.xml</file>
+                </mgt_serp_editor>
+            </updates>
+        </layout>
     </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Mgt_SerpEditor before="Mage_Adminhtml">Mgt_SerpEditor_Adminhtml</Mgt_SerpEditor>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>

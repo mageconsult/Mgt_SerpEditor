@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <layout>
-
+   <!--
     <adminhtml_stock_editor>
         <reference name="content">
             <block type="wee_stockmanagement/adminhtml_stock_editor" name="stock.editor" />
@@ -14,4 +14,5 @@
             </block>
         </reference>
     </adminhtml_stock_upload>
+   -->  
 </layout>

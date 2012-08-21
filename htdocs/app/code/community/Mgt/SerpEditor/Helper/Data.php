@@ -1,5 +1,4 @@
 <?php
-
 /**
  * MGT-Commerce GmbH
  * http://www.mgt-commerce.com
