@@ -20,7 +20,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class Mgt_SerpEditor_Block_Adminhtml_Form_Renderer_Attribute_Meta_Title extends Mage_Adminhtml_Block_Catalog_Form_Renderer_Fieldset_Element
+class Mgt_SerpEditor_Block_Adminhtml_Form_Renderer_Attribute_Meta_Description extends Mage_Adminhtml_Block_Catalog_Form_Renderer_Fieldset_Element
 {
     public function getElementHtml()
     {
@@ -28,14 +28,15 @@ class Mgt_SerpEditor_Block_Adminhtml_Form_Renderer_Attribute_Meta_Title extends 
         $helper = Mage::helper('mgt_serp_editor');
         
         $value = $element->getEscapedValue();
-        
-        $html = '<div class="mgt-serp-editor-meta-title">';
-          $html .= '<textarea onkeyup="mgtSerpEditorTitle();" id="mgt-serp-editor-meta-title" style="height:50px;border:1px solid #8080E6" id="'.$element->getHtmlId().'" name="'.$element->getName().'">';
+
+        $html = '<div class="mgt-serp-editor-meta-description">';
+          $html .= '<textarea onkeyup="mgtSerpEditorDescription();" id="mgt-serp-editor-meta-description" style="height:85px;border:1px solid #EA7601;" id="'.$element->getHtmlId().'" name="'.$element->getName().'">';
           $html .= $value;
           $html .= "</textarea>";
-          $html .= '<span class="mgt-serp-editor-tip"><strong>'.$helper->__('Tip').':</strong> '.$helper->__('Google limits SERP titles by pixel width, not by character count').'</span>';
-          $html .= '<span class="mgt-serp-editor-count mgt-serp-editor-count-title" id="mgt-serp-editor-meta-title-count">'.strlen($value).'</span>';
+          $html .= '<span class="mgt-serp-editor-tip"><strong>'.$helper->__('Tip').':</strong> '.$helper->__('the maximum number of characters in a Google SERP snippet is').' <span class="mgt-serp-editor-description-max-char">156</span></span>';
+          $html .= '<span class="mgt-serp-editor-count mgt-serp-editor-count-description" id="mgt-serp-editor-meta-description-count">'.strlen($value).'</span>';
         $html .= '</div>';
+
         return $html;
     }
 }

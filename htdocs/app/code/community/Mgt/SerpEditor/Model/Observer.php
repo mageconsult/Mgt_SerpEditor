@@ -22,16 +22,49 @@
 
 class Mgt_SerpEditor_Model_Observer 
 {
+    static protected $_urlKeyElement;
+    
     public function setFieldRenderer(Varien_Event_Observer $observer)
     {
         $form = $observer->getEvent()->getForm();
+
+        if ($form->getElement('url_key')) {
+            self::$_urlKeyElement = $form->getElement('url_key');
+        }
+        
         if ($form && $form->getElement('meta_title')) {
             
-            $metaTitle = $form->getElement('meta_title');
+            $helper = Mage::helper('mgt_serp_editor');
             $layout = Mage::app()->getLayout();
-            $metaTitle->setRenderer($layout->createBlock('mgt_serp_editor_adminhtml/form_renderer_attribute_meta_title'));
             
-            $muha = 1;
+            $metaTitle = $form->getElement('meta_title');
+            $metaTitle->setRenderer($layout->createBlock('mgt_serp_editor_adminhtml/form_renderer_attribute_meta_title'));
+
+            $metaKeywords = $form->getElement('meta_keyword');
+            $metaKeywords->setRenderer($layout->createBlock('mgt_serp_editor_adminhtml/form_renderer_attribute_meta_keywords'));
+
+            $metaDescription = $form->getElement('meta_description');
+            $metaDescription->unsNote();
+            $metaDescription->setRenderer($layout->createBlock('mgt_serp_editor_adminhtml/form_renderer_attribute_meta_description'));
+
+            if (self::$_urlKeyElement) {
+                $urlKeyReadOnlyElement = $metaTitle->getContainer()->addField('mgt_serp_editor_url_key', 'text', array('name' => 'URL-Key', 'label' => 'URL-Key', 'note' =>  $helper->__('You can change the url key in general tab, preview will be updated after saving'), 'required' => false));
+                $urlKeyReadOnlyRenderer = $layout->createBlock('mgt_serp_editor_adminhtml/form_renderer_url_key');
+                $urlKeyReadOnlyRenderer->setUrlKey(self::$_urlKeyElement);
+                $urlKeyReadOnlyElement->setRenderer($urlKeyReadOnlyRenderer);
+            }
+
+            $fieldset = $form->addFieldset('mgt_serp_editor_preview', array('legend' => $helper->__('SERP Preview'), 'class' => 'fieldset-wide'));
+            
+            $mgtSerpEditorPreviewElement = $fieldset->addField('mgt_erp_editor_preview', 'text', array('required'  => false));
+            $mgtSerpEditorPreviewRenderer = $layout->createBlock('mgt_serp_editor_adminhtml/form_renderer_preview');
+            $mgtSerpEditorPreviewRenderer->setMetaTitle($metaTitle);
+            $mgtSerpEditorPreviewRenderer->setMetaKeywords($metaKeywords);
+            $mgtSerpEditorPreviewRenderer->setMetaDescription($metaDescription);
+            if (self::$_urlKeyElement) {
+                $mgtSerpEditorPreviewRenderer->setUrlKey(self::$_urlKeyElement);
+            }
+            $mgtSerpEditorPreviewElement->setRenderer($mgtSerpEditorPreviewRenderer);
         }
     }
 }
