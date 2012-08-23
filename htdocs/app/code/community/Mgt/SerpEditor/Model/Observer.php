@@ -48,7 +48,7 @@ class Mgt_SerpEditor_Model_Observer
             $metaDescription->setRenderer($layout->createBlock('mgt_serp_editor_adminhtml/form_renderer_attribute_meta_description'));
 
             if (self::$_urlKeyElement) {
-                $urlKeyReadOnlyElement = $metaTitle->getContainer()->addField('mgt_serp_editor_url_key', 'text', array('name' => 'URL-Key', 'label' => 'URL-Key', 'note' =>  $helper->__('You can change the url key in general tab, preview will be updated after saving'), 'required' => false));
+                $urlKeyReadOnlyElement = $metaTitle->getContainer()->addField('mgt_serp_editor_url_key', 'text', array('name' => 'MGT-URL-Key', 'label' => 'URL-Key', 'required' => false));
                 $urlKeyReadOnlyRenderer = $layout->createBlock('mgt_serp_editor_adminhtml/form_renderer_url_key');
                 $urlKeyReadOnlyRenderer->setUrlKey(self::$_urlKeyElement);
                 $urlKeyReadOnlyElement->setRenderer($urlKeyReadOnlyRenderer);

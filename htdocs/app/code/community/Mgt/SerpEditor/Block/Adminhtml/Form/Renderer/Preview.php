@@ -45,8 +45,9 @@ class Mgt_SerpEditor_Block_Adminhtml_Form_Renderer_Preview extends Mage_Adminhtm
         
         $html = '<div class="mgt-serp-editor-preview">';
           $html .= '<div class="mgt-serp-editor-preview-title"><a id="mgt-serp-editor-preview-title" href="#">'.$metaTitleValue.'</a></div>';
-          $html .= '<div class="mgt-serp-editor-preview-url">'.$urlKeyValue.'</div>';
+          $html .= '<div class="mgt-serp-editor-preview-url" id="mgt-serp-editor-preview-url">'.$urlKeyValue.'</div>';
           $html .= '<div class="mgt-serp-editor-preview-description" id="mgt-serp-editor-preview-description">'.$metaDescriptionValue.'</div>';
+          $html .= '<input type="hidden" id="mgt-serp-editor-base-url" name="mgt-serp-editor-base-url" value="'.$this->_getBaseUrl().'" />';
         $html .= '</div>';
 
         return $html;

@@ -31,7 +31,7 @@ class Mgt_SerpEditor_Block_Adminhtml_Form_Renderer_Url_Key extends Mage_Adminhtm
             $helper = Mage::helper('mgt_serp_editor');
             $value = $urlKeyElement->getEscapedValue();
             $html = '<div class="mgt-serp-editor-url-key">';
-            $html .= '<input type="text" readonly="readonly" class="input-text" id="mgt-serp-editor-url-key" style="border:1px solid #80C080" value="'.$value.'" id="'.$element->getHtmlId().'" name="'.$element->getName().'" />';
+            $html .= '<input type="text" onkeyup="mgtSerpEditorUrlKey(\''.$urlKeyElement->getHtmlId().'\');" id="mgt-serp-editor-url-key" class="input-text" id="mgt-serp-editor-url-key" style="border:1px solid #80C080" value="'.$value.'" id="'.$element->getHtmlId().'" name="'.$element->getName().'" />';
             $html .= '</div>';
         }
         return $html;
