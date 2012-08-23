@@ -10,6 +10,10 @@ Why Do SERPs Matter to Me?
 
 Because ranking your online store in the proper SERP position will be the difference between success and failure in your search marketing campaigns.
 
+## DEMO
+
+[http://serp-editor.mgt-commerce.com/](http://serp-editor.mgt-commerce.com/)
+
 ## MORE INFORMATION
 
 [http://www.mgt-commerce.com/magento-serp-editor-extension.html](http://www.mgt-commerce.com/magento-serp-editor-extension.html)
