@@ -12,7 +12,7 @@ Because ranking your online store in the proper SERP position will be the differ
 
 ## MORE INFORMATION
 
-[http://www.mgt-commerce.com/blog/how-to-manage-your-magento-logs-with-graylog2/](http://www.mgt-commerce.com/blog/how-to-manage-your-magento-logs-with-graylog2/)
+[http://www.mgt-commerce.com/magento-serp-editor-extension.html](http://www.mgt-commerce.com/magento-serp-editor-extension.html)
 
 ## INSTALLATION
 
