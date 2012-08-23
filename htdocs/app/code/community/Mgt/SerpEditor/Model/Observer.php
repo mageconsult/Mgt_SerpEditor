@@ -27,14 +27,14 @@ class Mgt_SerpEditor_Model_Observer
     public function setFieldRenderer(Varien_Event_Observer $observer)
     {
         $form = $observer->getEvent()->getForm();
-
+        $helper = Mage::helper('mgt_serp_editor');
+        
         if ($form->getElement('url_key')) {
             self::$_urlKeyElement = $form->getElement('url_key');
         }
         
-        if ($form && $form->getElement('meta_title')) {
-            
-            $helper = Mage::helper('mgt_serp_editor');
+        if ($form && $form->getElement('meta_title') && $helper->isEnabled()) {
+
             $layout = Mage::app()->getLayout();
             
             $metaTitle = $form->getElement('meta_title');

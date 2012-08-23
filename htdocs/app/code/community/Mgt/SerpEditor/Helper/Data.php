@@ -22,5 +22,8 @@
 
 class Mgt_SerpEditor_Helper_Data extends Mgt_Base_Helper_Data
 {
-
+    static public function isEnabled()
+    {
+        return Mage::getModel('mgt_serp_editor/serp_editor')->isEnabled();
+    }
 }
