@@ -19,12 +19,8 @@ Because ranking your online store in the proper SERP position will be the differ
 * copy all files to your magento installation
 * Clear the cache in Admin -> System -> Cache Management 
 * Go to Admin -> System -> Configuration -> MGT-COMMERCE.COM -> Serp Editor -> Settings -> Active -> Yes
-* Edit a product and go to tab "Meta Information" to get an amazing google serp preview
+* Edit a product and go to tab "Meta Information" to get an amazing serp preview
 * Have fun and give Feedback
-
-## FEATURES
-
-* Provides a text field to purge single files, multi files at once or paths
 
 ## CHANGELOG
 
