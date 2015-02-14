@@ -1,0 +1,4 @@
+htdocs/app/code/community/Mgt/SerpEditor app/code/community/Mgt/SerpEditor
+htdocs/app/design/adminhtml/default/default/layout/mgt_serp_editor.xml app/design/adminhtml/default/default/layout/mgt_serp_editor.xml
+htdocs/app/design/adminhtml/default/default/template/mgt_serp_editor app/design/adminhtml/default/default/template/mgt_serp_editor
+htdocs/app/etc/modules/Mgt_SerpEditor.xml app/etc/modules/Mgt_SerpEditor.xml
